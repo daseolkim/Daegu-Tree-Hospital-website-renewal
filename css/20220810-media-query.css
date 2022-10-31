@@ -1,0 +1,47 @@
+@charset "utf-8";
+*{margin: 0; padding: 0;}
+ul{list-style: none;}
+a{text-decoration: none; color: #000;}
+body{background-color: #aaa;}
+.mobile{display: none;}
+
+.box{width: 200px; height: 200px; background-color: #fff;}
+.hamburger{
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #000;
+    right: 20px; top: 20px;
+    cursor: pointer;
+    display: none;
+}
+.hamburger .line{
+    width: 20px;
+    height: 4px;
+    background-color: #000;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+/* 중복된거 줄이려고 멕스위드를 합쳤다! */
+@media screen and (max-width: 1024px) {
+    .mobile{display: block;}
+    .pc{display: none;}
+    .hamburger{display: block;}
+}
+
+/* 테블릿 */
+@media screen and (min-width:641px) and (max-width:1024px){
+    body{background-color: #dea;}
+    .mobile{font-size: 30px; color: #fff;}
+    .box{width: 400px;}
+
+}
+
+/* 모바일 */
+@media screen and (max-width:640px) {
+    body{background-color: green;}
+    .mobile{font-size: 50px; color: #fff;}
+    .box{width: 600px; height: 600px;}
+}
+

@@ -1,0 +1,8 @@
+@charset "utf-8";
+*{margin: 0; padding: 0;}
+
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(105, 160, 53); margin: 10px 0;
+}

@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+p{
+    text-transform: uppercase;
+    /* 모든 영어를 대문자로 변환
+     uppercase - 대문자 / lowercase - 소문자 */
+
+     margin: 20px 0;
+     padding: 20px 0;
+     text-align: center;
+     font-weight: bold;
+     font-family: "Arial Black";
+     font-size: 30px;
+     color: #eee;
+
+}
+
+/* 
+ text-shadow- 글자에 그림자 효과를 주는 속성
+ box-shadow- 영역에 그림자 효과를 주는 속성\
+ 기본값은 none 이고 동작안함 해당속성을 사용하지 않으면 동작 안함
+ offset-x / offset-y / blur-radous / color
+ 가로(필수) / 세로(필수) / 흐림(선택 미사용시 기본값이 0인 동작) / 색상(선택 미사용시 브라우저의 기본값)
+*/
+
+
+.ts1{text-shadow: 3px 3px 3px red; color: rgb(255, 221, 226);}
+.ts2{text-shadow: 6px 3px 3px red; color: rgb(255, 221, 226)}
+.ts3{text-shadow: 9px 3px 3px red; color: rgb(255, 221, 226)}
+.ts4{text-shadow: 3px 3px 3px red; color: rgb(255, 221, 226)}
+.ts5{text-shadow: 3px 6px 3px red; color: rgb(255, 221, 226)}
+.ts6{text-shadow: 3px 9px 3px red; color: rgb(255, 221, 226)}
+.ts7{text-shadow: 3px 3px 3px red; color: rgb(255, 221, 226)}
+.ts8{text-shadow: 3px 3px 6px red; color: rgb(255, 221, 226)}
+.ts9{text-shadow: 3px 3px 9px red; color: rgb(255, 221, 226)}
+.ts10{
+    text-shadow: 4px 4px 0 #1565c0,
+    8px 8px #42a5f5,
+    12px 12px 0 #0d47a1;
+    
+}
+.ts11{
+    background-color: #666;
+    color: #222;
+    text-shadow: 2px 2px 3px rgba(255,255,255,0.2);
+}
+.ts12{
+    background: #e1f5fe;
+    text-shadow: 4px 4px 0 #bdbdbd;
+}
+
+.ts13:hover{color: #FFFFFF;
+    background: #db4343;
+    text-shadow: rgb(255, 238, 238) 0px 0px 5px, rgb(247, 222, 222) 0px 0px 10px, rgb(241, 163, 163) 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+}
+
+.ts14{
+    color: #fff;
+    background-color: #232323;
+    text-shadow:  0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 15px #fff,
+    0 0 20px #49ff18,
+    0 0 30px #49ff18,
+    0 0 40px #49ff18,
+    0 0 55px #49ff18,
+    0 0 75px #49ff18;
+}
+.ts15{background: #A0CBA4;
+    color: #D5E2D6;
+    font-family: 'Lobster';
+    text-shadow: #4A744D 1px 1px,#4A744D 0px 0px,#4A744D 1px 1px,#4A744D 2px 2px,#4A744D 3px 3px,#4A744D 4px 4px,#4A744D 5px 5px,#4A744D 6px 6px,#4A744D 7px 7px,#4A744D 8px 8px,#4A744D 9px 9px,#4A744D 10px 10px,#4A744D 11px 11px,#4A744D 12px 12px,#4A744D 13px 13px,#4A744D 14px 14px,#4A744D 15px 15px,#4A744D 16px 16px,#4A744D 17px 17px,#4A744D 18px 18px,#4A744D 19px 19px,#4A744D 20px 20px,#4A744D 21px 21px,#4A744D 22px 22px,#4A744D 23px 23px,#4A744D 24px 24px,#4A744D 25px 25px,#4A744D 26px 26px,#4A744D 27px 27px,#4A744D 28px 28px,#4A744D 29px 29px; overflow: hidden;} 
+
+.ts16{
+    background-color: rgb(212, 0, 255);
+    box-shadow: 5px 5px 10px #000;
+    text-shadow:  3px 3px 6px rgba(0,0,0,0.1);
+}
+

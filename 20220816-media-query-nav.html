@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/20220816-media-query-nav.css">
+    <link rel="stylesheet" href="css/all.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-wrap">
+            <div class="member">
+                <ul>
+                    <!-- 이런상황일때는 ul li a를 권장함  로그인 | 회원가입--> 
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                </ul>
+            </div>
+            <div class="logo">
+                <a href="20220816-media-query-nav.html">
+                    <img src="https://greenart-web.com/h-logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">hollys mall</a></li>
+                    <li><a href="#">membership</a></li>
+                    <li><a href="#">news</a></li>
+                    <li><a href="#">store</a></li>
+                    <li><a href="#">hollys</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <input type="checkbox" name="menu" id="menu-btn">
+    <!-- div가 올수없어서 스펜태그 -->
+    <label for="menu-btn">
+        <span class="btn-line"></span>
+        <span class="btn-line"></span>
+        <span class="btn-line"></span>
+    </label>
+    <div class="m-menu">
+        <div class="member-login">
+            <ul>
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">회원가입</a></li>
+            </ul>
+        </div>
+        <ul>
+            <li><a href="#">menu <i class="fa-solid fa-angle-down"></i></a></li>
+            <li><a href="#">hollys mall <i class="fa-solid fa-angle-down"></i></a></li>
+            <li><a href="#">membership <i class="fa-solid fa-angle-down"></i></a></li>
+            <li><a href="#">news <i class="fa-solid fa-angle-down"></i></a></li>
+            <li><a href="#">store <i class="fa-solid fa-angle-down"></i></a></li>
+            <li><a href="#">hollys <i class="fa-solid fa-angle-down"></i></a></li>
+        </ul>
+    </div>
+</body>
+</html>

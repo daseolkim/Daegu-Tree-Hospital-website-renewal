@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+.content .about-wrap{max-width: 1200px; margin: 0 auto; padding-bottom: 100px;}
+.content .about-content{background-color: #fff; border-radius: 5px; padding: 50px 30px 10px; box-shadow: 3px 3px 10px 1px rgba(0,0,0,0.2); display: flex; overflow: hidden; flex-wrap: wrap; align-items: center;}
+
+.content .profile-pic{flex-basis: 35%; text-align: center;}
+.content .profile-pic .profile-desc{padding-left: 20px; box-sizing: border-box; padding-top: 25px;}
+.content .profile-pic .profile-desc p{margin-bottom: 0.5em; letter-spacing: -1px;}
+.content .profile-txt{flex-basis: 65%;}
+.content .profile-txt > div{margin-bottom: 1.5em;}
+.content .profile-txt > div h3{text-transform: uppercase; margin-bottom: 1em;}
+.content .profile-txt > div p{letter-spacing: -1px;}
+.content .profile-txt .profile-mind p span{font-weight: bold;}
+
+.content .profile-txt .profile-skill .progress-area{display: flex; flex-wrap: wrap; justify-content: space-between;}
+.content .profile-txt .profile-skill .progress-area .progress{flex-basis: 48%; margin-bottom: 1em;}
+.content .profile-txt .profile-skill .progress-area .progress p{margin-bottom: 0.5em;}
+
+.content .profile-txt .profile-skill .progress-area .progressbar-text{left: 94% !important; top: 39% !important;} 
+
+
+@media screen and (min-width: 641px) and (max-width: 1200px){
+    .content .profile-txt{flex-wrap: wrap; margin-top: 30px; column-gap: 20px;}
+    .content .profile-txt > div{flex-basis: 48%; text-align: center;}
+    .content .profile-txt > div h3{margin-bottom: 16px;}
+    .content .profile-pic .profile-img{flex-basis: 50%;}
+    .content .profile-pic .profile-desc{flex-basis: 50%;}
+    .content .profile-txt .profile-skill .progress-area .progressbar-text{left: 92% !important; top: 39% !important;} 
+}
+@media screen and (max-width: 1000px){
+    .content .profile-pic,
+    .content .profile-txt{flex-basis: 100%; display: flex;}
+}
+@media screen and (max-width: 640px){
+    .content .profile-pic,
+    .content .profile-txt{display: block;}
+    .content .profile-txt{margin-top: 30px;}
+    .content .profile-txt .profile-skill .progress-area .progressbar-text{left: 94% !important; left: 90% !important;} 
+}
+
+
+
+
+
+
+
+.footer{position: relative;}

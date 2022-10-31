@@ -1,0 +1,176 @@
+@charset "utf-8";
+*{margin: 0; padding: 0;}
+/* before/after 가상요소 > 실제로 존재하지 않는 요소
+가상요소 사용시 content:""; < 반드시 사용해야만 동작!없을시 동작 안함
+실제로 content :""; 컨텐츠를 직접 넣어 사용하는 경우도 있으나, 일반적으로 해당 요소를 직접 꾸밀때 사용
+해당요소릐 위치선정을 위해 요소에 기준점인  position:relative;를 사용하며
+가상요소에 absolute;를 사용해 before/after를 사용하는 경우 많다
+콜론 하나만 사용해도 동작
+:before / after
+힌트가 콜론을 2개를 사용해야 나온다. 
+before 앞쪽의 컨텐츠
+after 뒤쪽의 컨텐츠
+before/after 기본 디스플레이 속성이 inline으로 적용
+*/
+
+p::before{
+    content:"New";
+    width: 40px;
+    display: inline-block;
+    background-color: rgb(27, 19, 133);
+    text-align: center;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #fff;
+}
+p::after{
+    content:"5,000";
+    width: 40px;
+    display: inline-block;
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #fff;
+}
+.box{
+    text-align: center;
+    width: 210px;
+    margin: 0 auto;
+    position: relative;
+    /* border-bottom: 1px solid #000; */
+}
+.box::after{
+    content: "";
+    width: 0%;
+    height: 1px;background-color: #000;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transition: 1s;
+    transform: translateX(-50px);
+}
+.box:hover::after{width: 45%;}
+
+/* 컨텐츠에"드가면 엡솔루트
+컨텐츠에 뭐가들어가면 인라인블락 대부분경우 */
+.box::before{
+    content: "";
+    width: 40px;
+    height: 40px;
+    background-color: rgb(255, 145, 145);
+    position: absolute;
+    border-radius: 50%;
+    left: -10px;
+    bottom: 0px;
+    z-index: -1;
+    /* -1은 맨뒤로 보내는 속성 */
+    background: url("http://via.placeholder.com/40");
+}
+.box:hover::before{
+    background: url("http://via.placeholder.com/40/dae");
+}
+
+.btn{
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+.btn span{
+    border: 1px solid #ccc;
+    padding: 5px 50px;
+    cursor: pointer;
+    position: relative;
+}
+.btn span::after{
+    content:"";
+    width: 0%;
+    height: 100%;
+    background-color: rgb(243, 136, 136);
+    position: absolute;
+    left: 0; top: 0;
+    z-index: -1;
+    transition: 1s;
+}
+.btn span:hover::after{width: 100%;}
+button{
+    background: none;
+    border: 0;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 3px #942 inset; 
+    padding: 16px 32px;
+    margin: 16px;
+    font-size: 16px;
+    color: #942;
+    font-weight: bold;
+    position: relative;
+}
+
+button::before,
+button::after{
+    content:"";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+.draw::before{
+    border: 3px solid transparent;
+    left: 0; top: 0;
+    width: 0;height: 0;
+}
+.draw::after{
+    border: 3px solid transparent;
+    right: 0;bottom: 0;
+    width: 0;height: 0;
+}
+.draw:hover::before{
+    width: 100%; height: 100%;
+    border-top-color: orange;
+    border-right-color: orange;
+    transition: width 0.25s,height 0.25s 0.25s;
+    
+}
+.draw:hover::after{
+    width: 100%; height: 100%;
+    border-bottom-color: rgb(255, 0, 0);
+    border-left-color: rgb(255, 0, 0);
+    transition: width 0.25s 0.5s, height 0.25s 0.75s, border-color 0s 0.5s;
+}
+.meet::after{
+    top: 0; left: 0;
+    
+}
+.meet:hover::after{
+    transition: height 0.25s, width 0.25s 0.25s;
+}
+.center::before,
+.center::after{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: center
+    /* 회전중심점을 지정할때 사용하는 속성 */
+
+}
+.center::before{
+    border-top: 3px solid rgb(255, 164, 164);
+    border-bottom: 3px solid rgb(255, 164, 164);
+    transform: scaleX(0);
+}
+.center::after{
+border-left: 3px solid rgb(255, 164, 164);
+border-right: 3px solid rgb(255, 164, 164);
+transform: scaleY(0);
+}
+.center:hover::before{
+    transform: scale(1);
+    transition: 0.3s;
+}
+.center:hover::after{
+    transform: scale(1);
+    transition: 0.3s;
+}

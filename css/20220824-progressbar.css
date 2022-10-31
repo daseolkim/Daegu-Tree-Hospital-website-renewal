@@ -1,0 +1,25 @@
+@charset "utf-8";
+*{margin: 0; padding: 0;}
+ul{list-style: none;}
+a{text-decoration:none; color: #000;}
+.progress{
+    width: 200px;
+    height: 100px;
+    margin: 100px;
+}
+.progress > svg{
+    border-radius: 10px ;
+}
+#pro1 .progressbar-text{
+    top: 0 !important;
+    left: 100% !important;
+    font-size: 20px !important;
+    color: rgb(255, 0, 0) !important;
+}
+#pro1 p{text-align: center; margin-bottom: 10px; font-size: 20px;}
+#pro2 .progressbar-text{
+    top: 100% !important; 
+}
+#pro3{margin-top: 150px; position: relative;}
+#pro2 p{position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 20px;}
+#pro3 p{position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 20px;}

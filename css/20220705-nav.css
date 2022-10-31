@@ -1,0 +1,47 @@
+@charset "utf-8";
+*{margin: 0; padding: 0;}
+ul{list-style: none;}
+a{text-decoration: none; color: #000;}
+/* div기본요소가 블락요소 라서 적으면 다음줄로넘어감 */
+.nav{
+    width: 100%;
+border-bottom: 1px solid #ddd;
+}
+.nav .nav-wrap{
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* ul이 부모요소라서 오버플로우 히든처리
+li에는 플롯 레프트 */
+.nav ul{overflow: hidden;}
+.nav ul li{
+    float: left;
+    width: 20%;
+    text-align: center;
+    cursor: pointer;
+}
+/* 메뉴옆에 공간까지 다 누르게 하려면  */
+.nav ul li a{display: block; width: 100%; padding: 15px 0;}
+.nav ul li a:hover{color: #fff;}
+.nav ul li:hover{background-color: rgb(183, 101, 231);}
+
+.nav ul li .submenu{
+    position: absolute;
+    width: 20%;
+    height: 0;
+    overflow: hidden;
+    transition:  0.5s;
+}  
+.nav ul li:hover .submenu{height: 120px;}
+/* display: none;
+    디스플레이 논에선 트렌지션이 안먹힌다. 세로길이값을 0을 주고 */
+.nav ul li .submenu ul li{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    background-color: rgb(200, 166, 255);
+}
+.nav ul li .submenu ul li a{padding: 0; color: #fff;}
+

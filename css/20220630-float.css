@@ -1,0 +1,96 @@
+@charset "utf-8";
+
+/* 
+float 정렬 속성 / 띄어서 정렬
+float사용시 해당 요소가 띄어서 정렬 되므로 다음 요소가 float이 사용된 공간에 들어가는 것을 방지하기 위해 clear를 통해 다음 요소를 정상적으로 배치 할수 있다.
+
+fll + enter > float:left;
+flr + enter > float:rlght;
+fln + enter > float:none;
+
+※ float: rlght 사용시 영역이 아닌 요소에 직접적으로 적용시 컨텐츠는 역순 정렬된다.
+
+float을 해제 하는 5가지 방법
+
+1. float이 사용된 "다음 부모요소"에 clear:both;를 적용
+2. float이 사용된 "부모요소"에 overflow:hidden;을 적용
+3. float이 사용된 "부모요소"에 float영향을 받지않게 세로를 입력하는 방법
+4. float이 사용된 "다음 부모요소"에 클래스를 중첩해서 적용하는 방법
+5. float이 사용된 "부모요소" 가상요소인 after를 적용해 직접 clear 해주는 방법
+
+
+
+*/
+.box1::after{
+    content:"";
+    clear: both;
+    display: block;
+}
+
+.clear{
+    clear: both;
+    display: block;
+}
+
+
+.box1{
+    width: 60%;
+    background-color: #dad;
+    /* overflow: hidden; */
+    /* height: 404px; */
+}
+.box1 .title{float: left;}
+/* .box2{clear: both;} */
+
+.item{
+    width: 100%;
+    height: 60px;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    box-sizing: border-box;
+}
+.item .item-content1{
+    width: 30%;
+    height: 100%;
+    background-color: #397;
+    float: left;
+}
+.item .item-content2{
+    width: 30%;
+    height: 100%;
+    background-color: #ce9;
+    float: left;
+
+}
+.item .item-content3{
+    width: 30%;
+    height: 100%;
+    background-color: rgb(55, 82, 15);
+    float: left;
+}
+
+.content{
+    width: 100%;
+    height: 660px;
+    background-color: #090;
+}
+.content .content-wrap{
+    width: 1300px;
+    height: 100%;
+    background-color: rgb(1, 83, 35);
+    margin: 0 auto;
+}
+.content .content-wrap .content-item{
+    width: 310px;
+    height: 310px;
+    background-color: rgb(212, 253, 65);
+    float: left;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+.content .content-wrap .content-item:nth-child(4n){
+    margin-right: 0;
+}
+ul{float: right ;width: 50%;}
+ul li{float: left; width: 10%;}
+/* 역순정렬을 원하지 않으면 부모를 float:right 처리한다 */

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <span>ID : </span> <input type="text" name="a" id="a" placeholder="아이디 입력" autofocus>
+     <span>PW : </span> <input type="password" name="a" id="b" placeholder="비밀번호 입력">
+     <input type="button" value="login" onclick="alert('현재 로그인을 사용할 수 없습니다.')">
+     <input type="text" value="관리자" readonly> 
+     <input type="text" value="관리자" maxlength="6"> 
+     <input type="text" list="datalist">
+     <datalist id="datalist">
+        <option value="대구맛집"></option>
+        <option value="부산맛집"></option>
+        <option value="서울맛집"></option>
+        <option value="포항맛집"></option>
+        <option value="영덕맛집"></option>
+        <option value="여수맛집"></option>
+     </datalist>
+     <input type="file">
+     <input type="date">
+     <input type="color" name="id">
+     <input type="checkbox" name="b" id="chk1"><label for="chk1">체크박스1</label>
+     <input type="checkbox" name="b" id="chk2" checked><label for="chk2">체크박스2</label>
+     <input type="checkbox" name="b" id="chk3" disabled><label for="chk3">체크박스3</label>
+     <input type="checkbox" name="b" id="chk4"><label for="chk4">체크박스4</label>
+     <br>
+     <input type="radio" name="c" id="rad1"><label for="rad1">SKT</label>
+     <input type="radio" name="c" id="rad2"><label for="rad2">KT</label>
+     <input type="radio" name="c" id="rad3"><label for="rad3">LGU+</label>
+
+<!-- 사용자에게 입력받을수 있는 요소를 input요소라 부른다.
+필수로 필요한 속성은 type 속성(종류) 이며, 해당 태그는 별도로 닫는 태그가 존재하지 않는다.
+
+type의 종류
+text - 데이터를 작성할수 있는 필드
+password - 데이터를 확인할수 없도록 가려진 필드
+checkbox - 데이터를 체크할수 있는 필드 (중복가능)
+radio - 데이터를 체크할수 있는 필드 (중복 불가능)
+file - 업로드할 데이터를 선택할수있는 필드
+color - 컬러셋을 설정하는 필드
+number - 숫자를 선택할수있는 필드
+select - 옵션 태그를 통해 데이터를 선택할수있는 태그요소
+button - 버튼으로 클릭할수있게 만들어진 필드
+email - 이메일을 받을수있는 필드
+
+추가적으로 사용할수있는 속성
+checked - 미리 체크하도록 설정
+disabled - 선택하지 못하도록 설정
+autofocus - 우선적으로 선택 되어있는 상태 - 하나만 사용가능
+placeholder - 기본적으로 쓰여진 안내글
+maxlength - 필드의 최대 문자 갯수
+readonly - 읽기 전용데이터 변경 불가능
+value - 실제 해당값
+max - 최대 숫자
+min - 최소 숫자
+class - 이름
+id - 고유의 이름
+-->
+
+
+
+
+
+     <!-- in 컨트롤 스페이스 엔터키 자동으로 인풋 나옴
+    읽기 전용 모드 readonly
+    글자수제한 maxlength 
+    연관검색어 기능 list 값과 datalist id 값이 같으면된다.
+
+-->
+
+     
+</body>
+</html>

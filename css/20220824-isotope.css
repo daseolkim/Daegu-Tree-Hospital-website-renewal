@@ -1,0 +1,72 @@
+@charset "utf-8";
+*{margin: 0; padding: 0;}
+ul{list-style:  none;}
+a{text-decoration: none; color: #000;}
+
+.container{
+    width: 80%;
+    margin: 10px auto;
+}
+.container .menu{text-align: center;}
+.container .menu ul li{
+    display: inline-block;
+    border: 1px solid rgb(255, 156, 156);
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    
+}
+.container .menu ul li a{
+    font-size: 14px;
+    transition: 0.5s;
+}
+.container .menu ul li:hover,
+.container .menu ul li.on{
+    background-color: rgb(255, 156, 156);
+}
+.container .menu ul li:hover a,
+.container .menu ul li.on a{
+    background-color: rgb(255, 156, 156);
+}
+
+
+/* .container.item-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 50px;
+} */
+
+.container .item-wrap .item{
+    flex-basis: 30%;
+}
+/* 3개씩안하고 4개씩하고싶으면 위에 베이시스 줄이기 */
+
+/* 플렉스버전 위에꺼 */
+
+.container .item-wrap{
+    text-align: center;
+    margin-top: 50px;
+    overflow: hidden;
+}
+.container .item-wrap .item{
+    width: 30%;
+    float: left;
+    margin: 5px;
+    padding: 2px;
+}
+/* 가려진건 플룻레프트 버전 */
+.container .item-wrap .item img{width: 100%;}
+
+@media screen and (max-width: 640px){
+    .container .item-wrap .item{
+        width: 98%;
+        margin-top: 0;
+    }
+    .container{width: 100%;}
+    .container .menu ul li:nth-child(5),
+    .container .menu ul li:nth-child(6){
+        margin-top: 10px;
+    }
+
+}

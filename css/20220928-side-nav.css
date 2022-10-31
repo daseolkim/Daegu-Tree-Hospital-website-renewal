@@ -1,0 +1,55 @@
+@charset "utf-8";
+*{margin: 0; padding: 0; font-family: 'Noto Sans KR', sans-serif;}
+ul{list-style: none;}
+a{text-decoration: none ;color: #000;}
+
+.side-nav{
+    position: fixed;
+    z-index: 9;
+    right: 0;
+    top: 0;
+}
+/* 라이트 0 하면 반대로적용 */
+.side-nav > ul{position: fixed; right: 204px; top: 50%; transform: translateY(-50%); width: 35px; height: 315px; text-align: center; transition: 1s;}
+/* 라이트 204하면반대 */
+.side-nav > ul.on{right: 0;}
+.side-nav > ul li{height: 35px; border: 1px solid #e6e6e6; box-sizing: border-box; line-height: 33px; position: relative; transition: 0.3s; cursor: pointer;}
+.side-nav > ul li:not(:nth-child(1)){border-top: 0;}
+.side-nav > ul li i{color: #b2b2b2; font-size: 14px; transition: 0.3s;}
+.side-nav > ul li:nth-last-child(1) i,
+.side-nav > ul li:nth-last-child(2) i{font-size: 18px;}
+
+.side-nav > ul li:hover::after{content: attr(data-text); position: absolute; width: 65px; font-size: 11px; right: 40px; bottom: 0; background-color: rgba(255,25,255,255,0.5);border: 1px solid #e6e6e6; border-radius: 3px; height: 10px; line-height: 10px; padding: 8px; color: #555;}
+
+.side-nav > ul li:nth-child(1):hover,
+.side-nav > ul li.on{background-color: #000;}
+
+.side-nav > ul li:nth-child(1):hover i,
+.side-nav > ul li.on i{background-color: #000;}
+
+.side-nav .side-content{position: fixed; right: 0; top: 0;background-color: #fff; transition: 1s; width: 164px; padding: 19px 20px 0; border-left: 1px solid #e6e6e6;}
+.side-nav .side-content.on{right: -204px;}
+.side-nav .side-content .top-slide{
+    width: 164px;
+    height: 164px;
+    overflow: hidden;
+}
+.side-nav .side-content .top-slide ul{display: flex; width: 200%; animation: slide 10s infinite;}
+@keyframes slide{
+    0%{margin-left: 0;}
+    40%{margin-left: 0;}
+    50%{margin-left: -100%;}
+    90%{margin-left: -100%;}
+    100%{margin-left: 0;}
+}
+.side-nav .side-content .nav-content{margin-right: 20px; width: 164px; overflow: hidden;}
+.side-nav .side-content .nav-content ul li{width: 162px; height: 30px; margin: 0 5px 5px 0; border: 1px solid #e6e6e6; background-color: #fff; text-align: center; line-height: 30px;}
+.side-nav .side-content .nav-content ul li:hover{background-color: #e6e6e6;}
+.side-nav .side-content .nav-content ul li a{font-size: 11px; display: inline-block; width: 100%;}
+.side-nav .side-content .cs-center{width: 164px; margin-top: 30px; padding-top: 4px; overflow: hidden;}
+.side-nav .side-content .bank-info{width: 164px; margin-top: 30px; padding-top: 4px; overflow: hidden;}
+
+.side-nav .side-content h2{text-transform: uppercase; font-size: 10px; color: #3a3a3a; position:relative; line-height: 25px; letter-spacing: 0.5px;}
+.side-nav .side-content h2::after{content:""; position: absolute; width: 20px; height: 3px; background-color: #3a3a3a; left: 0px;}
+.side-nav .side-content p{padding-bottom: 7px; font-size: 11px; color: #858585; line-height: 20px; letter-spacing: -0.5px;}
+.side-nav .side-content p:nth-child(3){margin-top: 10px;}

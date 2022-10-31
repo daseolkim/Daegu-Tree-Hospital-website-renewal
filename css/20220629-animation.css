@@ -1,0 +1,82 @@
+@charset "utf-8";
+.item{
+    width: 200px;
+    height: 200px;
+    background-color: rgb(255, 0, 0);
+    animation: ani 3s infinite;
+}
+
+.item:hover{
+    animation-play-state: paused;
+    cursor: pointer;
+}
+
+@keyframes ani {
+    0%{background-color: rgb(255, 0, 0); width: 200px;}
+    50%{background-color: rgb(255, 145, 0);width: 300px;}
+    100%{background-color: rgb(255, 251, 0);width: 400px;}
+}
+/* 
+animation-name     애니매이션의 이름(필수)
+animation-duration       총 진행 시간(필수)
+animation-interayion-count       동작 횟수 > 숫자 해당 숫자 반복 /  infinite무한반복(선택)
+animation-fill-mode     시작과 종료동작을 제어 (선택)
+animation-timing-function    애니메이션 속도 제어(선택)
+animation-play-state     정지 플레이 유무(선택)
+
+
+속도
+ease-out> 빠르게 시작해서 마지막 부분에서 감속(기본값)
+ease-in-out> 천천히 시작해 중간에 가속한뒤 마지막에 감속
+ease-in> 천천히 시작해 마지막 부분에서 가속
+linear> 처음부터 끝까지 일정한 속도
+
+축약어로 animation: name duration 만으로 동작하며, 키 프레임 작성시에는 0%~ 100% 까지 자유롭게 잘라서
+사용 가능 하며, 소수점도 사용가능
+animation사용하기 위해서는 @keyframes필요, 애니매이션 이름 (키프레임이름)에서는 한글사용 가능
+*/
+
+.radius{
+    width: 200px;
+    height: 200px;
+    background-color: #dbe;
+    animation: radius 5s forwards;
+
+
+}
+@keyframes radius{
+    0%{border-radius: 0;}
+    25%{border-radius: 50% 0 0 0;}
+    50%{border-radius: 50% 50% 0 0;}
+    75%{border-radius: 50% 50% 50% 0;}
+    100%{border-radius: 50%;}
+}
+.spin{
+    width: 120px;
+    height: 120px;
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    animation: spin 2s infinite linear;
+}
+
+@keyframes spin{
+    0%{transform: rotate(0);}
+    100%{transform: rotate(360deg);}
+}
+img{
+    width: 50px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll 2s infinite; 
+
+}
+@keyframes scroll{
+    0%{transform: translateY(0) translateX(-50%);}
+    25%{transform: translateY(-10px) translateX(-50%);}
+    50%{transform: translateY(-20px) translateX(-50%);}
+    75%{transform: translateY(-10px) translateX(-50%);}
+    100%{transform: translateY(0px) translateX(-50%);}
+}

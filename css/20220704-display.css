@@ -1,0 +1,69 @@
+@charset "utf-8";
+*{margin: 0; padding:0;}
+
+
+    
+/* display - 해당요소의속성을 변경하거나 삭제할때 사용하는 속성 
+
+block - 기본적으로 가로길이가 100%를 가지고있다.(미입력시)
+다음 컨텐츠가 줄 바꿈 형태로 보여진다.
+가로길이값을 입력해더라도, 다음 컨텐츠는 다음줄로 보여진다.
+magin:0 auto - block 요소에만 동작(lise-item은 제외) 이외 다른 display 속성인 inline / inline-block에서는 동작안함
+
+가로길이가 컨텐츠 길이까지적용 / 가로와 세로 위아래 여백이 동작하지 않고 해당 컨텐츠를 두번 입력시 컨텐츠를 옆으로배치
+
+inline-block - inline 과block의 중간 요소로 줄바꿈이 되지는 않지만 , 크기변경이 가능(다만 기본값은 컨텐츠 영역까지 차지) 2개이상요소사용시 inline과 동일하게 옆으로 컨텐츠가 배치
+
+
+none-화면에서 지우며, 해당영역 또한 삭제
+
+db + enter = display: block;
+di + enter = display: inline;
+dib + enter = display: inline-block; */
+
+
+p{background-color: #def; margin-bottom: 10px; width: 400px; margin: 0 auto;} 
+span{background-color: aquamarine; width: 400px; display:block; margin: 0 auto;}
+
+input{width: 500px;}
+
+input:focus{
+    outline: rgba(255, 0, 0, 0.747);
+}
+
+/* 다음줄로넘어가면 블락
+변하지않으면 인라인블락
+ */
+
+.box{
+    width: 1200px;
+    background-color: #d4a;
+    overflow: hidden;
+}
+.box img{display: block; float: left;}
+/* .a{font-size: 0;} */
+.a input{display: block; float: left;}
+ul{width: 500px; margin: 0 auto; overflow: hidden;}
+ul li{
+    background-color: #980;
+    margin: 5px 0;
+    /* display: inline-block; */
+    float: left;
+}
+.a{overflow: hidden;}
+.btn{
+    clear: both;
+    background-color: rgb(8, 124, 4);
+    display: block;
+    height: 20px;
+    width: 50px;
+    color: #fff;
+    border-radius: 6px;
+    width: 130px; 
+    margin: 0 auto;
+    text-align: center;
+    padding: 8px;
+    line-height: 20px;
+    text-decoration: none;
+}
+/* 인라인블락이라 가로세로변경이 안되서 바꿔줌 */

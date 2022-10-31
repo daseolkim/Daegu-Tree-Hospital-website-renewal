@@ -1,0 +1,218 @@
+@charset "utf-8";
+*{margin: 0; padding: 0;}
+ul{list-style: none;}
+a{text-decoration: none; color: #000;}
+
+.content{width: 100%;}
+.content .content-wrap{
+    background-color: #eee;
+    padding: 50px 2%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.content .title{
+    margin-bottom: 50px;
+    text-align: center;
+}
+.content .title h2{font-size: 28px; font-weight: bold; margin-bottom: 8px;} 
+.content .title span{color: #777; letter-spacing: -1px;}
+
+.content .content-item{
+    display: grid;
+    grid-template-columns: 32.2% 34% 32.2%;
+    /* 리핏 반복 */
+    grid-template-rows: repeat(2, 210px);
+    /* 겝 공간주기 */
+    gap: 10px;
+}
+.content .content-item .content-list{background-color: #aaa; padding: 40px;}
+
+/* 세로축을 같이쓰려면 가로와 세로를 같이 입력해야함
+가로축만쓰려면 x축만 쓰면됨 */
+.content .content-item .content-list:nth-child(2){
+    grid-row: 1/3;
+    grid-column: 2/3; 
+    background: url("https://via.placeholder.com/100") no-repeat right bottom;
+}
+.content .content-item .content-list h3{margin-bottom: 20px;}
+/* .content-type2{width: 100%; height: 500px; background-color: blue;}
+.content-type2 .content-wrap{max-width: 1200px; margin: 0 auto; display: flex; align-items: center; height: 500px;
+    justify-content: center;
+    } */
+/* 오른쪽으로 보내고싶다면 저스티 파이 컨텐츠는 부모에게 준다*/
+/* 얼라인 아이템즈는 세로길이값을 입력해줘야해 */
+/* .content-type2 .content-item{
+    width: 33%;
+    height: 200px;
+    background-color: #909;
+    flex-basis: 30%;
+} */
+    
+    /* flex-basis 자식 플렉스에만 적용되는가로 
+가로는 가로 */
+
+/* .content-type2 .content-item:nth-child(2){background-color: #669;}
+.content-type2 .content-item:nth-child(3){background-color: #60a;} */
+
+
+
+
+
+
+.content-type2{width: 100%; height: auto;}
+.content-type2 .content-wrap{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 2%;
+}
+.content-type2 .content-item{display: flex; overflow: hidden; margin-bottom: 4%;}
+.content-type2 .content-item .left{
+    flex-basis: 60%;
+    position: relative;
+}
+.content-type2 .content-item .left img{
+    width: 100%;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.content-type2 .content-item .right{
+    flex-basis: 40%;
+    padding: 20% 0 20% 2%;
+    position: relative;
+    box-sizing: border-box;
+}
+.content-type2 .content-item .right::after{
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    background-color: #f5f5f5;
+    top: 0;
+    left: -30%;
+    z-index: -1;
+}
+.content-type2 .content-item .right p{
+    font-size: 40px;
+    font-weight: 100;
+    position: relative;
+    top: -40px;
+}
+.content-type2 .content-item .right span{
+    display: block;
+    color: #666;
+    line-height: 1.5;
+    font-size: 13px;
+}
+
+.content-type2 .content-item .right a{
+    position: relative;
+    display: inline-block;
+    margin-top: 10%;
+    color: #c00;
+    padding-right: 4%;
+}
+
+.content-type2 .content-item .right a::after{
+    position: absolute;
+    content: "";
+    width: 90%;
+    top: 50%;
+    right: -90%;
+    border-bottom: 2px solid #c00;
+}
+.content-item:nth-child(2n) .right .line::after{
+    position: absolute;
+    content: "";
+    width: 4%;
+    top: 61.8%;
+    right: 53%;
+    border-top: 2px solid #c00;
+    transform: rotate(45deg);
+}
+.content-type2 .content-item .right .line::after{
+    position: absolute;
+    content: "";
+    width: 4%;
+    top: 61.8%;
+    right: 53%;
+    border-top: 2px solid #c00;
+    transform: rotate(45deg);
+}
+
+
+.content-item:nth-child(2n) .left{order: 2;}
+.content-item:nth-child(2n) .right{order: 1; text-align: right; padding-right: 2%; padding-left: 0;}
+.content-item:nth-child(2n) .right::after{width: 160%;}
+.content-item:nth-child(2n) .right a{margin-right: 20%;}
+
+
+.content-item:nth-child(2n) .right a::after{position: absolute;}
+
+
+
+/* 테블릿 */
+@media screen and (max-width: 1200px){
+    .content .content-item{
+        grid-template-columns: 48% 50.9%;
+        grid-template-rows: repeat(3, 210px);
+    }
+    .content-type2 .content-item .right{
+        padding: 10% 0 10% 2%;
+    }
+    .content-type2 .content-item .right p{
+        font-weight: bold;
+        font-size: 24px;
+    }
+    .content-type2 .content-item .right {
+        padding: 10% 2% 10% 0;
+    }
+    .content-type2 .content-item .right a{margin-right: 25%;}
+
+
+    .content-type2 .content-item{
+        flex-wrap: wrap;
+        /* 다음줄로 넘어가도록 */
+    }
+    .content-type2 .content-item .left{
+        flex-basis: 100%;
+        font-size: 0;
+    }
+    .content-type2 .content-item .left img{
+        position: static;
+        transform: translateY(0);
+        /* 이미지 정상적이로 보이게  기본값 스텍틱 포지션을 없애고싶으면 */
+    }
+    .content-type2 .content-item .right{
+        padding: 10% 0% 10% 2%;
+        flex-basis: 100%;
+    }
+    .content-type2 .content-item .right p{
+        font-size: 20px;
+    }
+    .content-type2 .content-item:nth-child(2n) .right{
+        padding: 15% 0 10% 2%; 
+    }
+    .content-type2 .content-item .right a{
+        font-size: 14px !important
+    }
+}
+/* 모바일 */
+@media screen and (max-width: 640px){
+    .content .content-item{
+        /* grid-template-columns: 99.7%; 1개만 쓰는거 */
+        grid-template-columns: 48% 50.9%;
+        grid-template-rows: repeat(5, 210px);
+    }
+    .content .content-item .content-list:nth-child(2){
+        grid-column: 1/3;
+        grid-row: 1/2;
+    }
+    .content .content-item .content-list:nth-child(4){
+        grid-column: 1/3;
+    }
+    .content .content-item .content-list:nth-child(5){
+        grid-column: 1/3;
+    }
+}

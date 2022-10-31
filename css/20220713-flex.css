@@ -1,0 +1,117 @@
+@charset "utf-8";
+*{margin: 0; padding: 0;}
+
+.box{width: 100px; height: 75px; background-color: red; text-align: center; line-height: 75px; font-size: 30px;}
+/* display:flex > 부모요소에 작성해야 동작
+추가적인 속성 일부는 부모요소에 적용 /  직접적으로 적용해야할 속성도 존재함
+flex - 단방향 레이아웃 구성방식 */
+.container1{
+    display: flex;
+    flex-direction: column;
+    /* 컨텐츠를 세로축(y축)으로 배치한다 */
+    flex-direction: column-reverse;
+    /* 컨텐츠를 세로축(y축) 으로 배치되며, 역순으로 표현 */
+    flex-direction: row;
+    /* 컨텐츠를 가로축 (x축)으로 배치 (기본값) */
+    flex-direction: row-reverse;
+    /* 컨텐츠를 가로축(x축)으로 배치되며, 역 및 우측으로 배치된다 */
+
+    /* 화면 줄였을때 가능함 */
+    flex-wrap: wrap;
+    /* 컨텐츠 영역이 끝까지 닿았을 경우 다음줄로 컨텐츠가 넘어감 */
+    flex-wrap: nowrap;
+    /* 컨텐츠 영역이 100%기준으로 꽉참(기본값) */
+    flex-wrap: wrap-reverse;
+    /* 컨텐츠 영역이 끝까지 닿았을 경우 컨텐츠는 역순으로 배치되며, 다음줄로 넘어감 */
+    margin: 50px 0;
+}
+.container2{
+    display: flex;
+    background-color: #165;
+    justify-content: center;
+    /* 컨텐츠를 가운데로 정렬 */
+    justify-content: flex-end;
+    /* 컨텐츠를 오른쪽으로 정렬 */
+    justify-content: flex-start;
+    /* 컨텐츠를 왼쪽으로 정렬(기본값) */
+    justify-content: space-between;
+    /* 전체크기에 여백을 균등하게 분배하지만 왼쪽 여백 오른쪽여백을 제외하고  분배between을 쓰기 */
+    justify-content: space-around;
+    /* 전체크기에 여백을 균등하게 분배 */
+}
+
+.container3{
+    display: flex;
+    background-color: rgb(122, 71, 71);
+    height: 600px;
+    margin: 50px 0;
+    align-items: center;
+    /* 배경설정한만큼의 가운데에 정렬한다 */
+    align-items: flex-end;
+    /* 컨텐츠의 위치를 하단으로 정렬 */
+    align-items: flex-start;
+    /* 컨텐츠의 위치를 상단으로 정렬(기본값) */
+}
+.container4{
+    display: flex;
+    background-color: rgb(206, 111, 159);
+    height: 600px;
+
+    /* 같이써야함 */
+    flex-wrap: wrap;
+    align-content: center;
+    /* 컨텐츠가 가운데 정렬/초과되는 부분은 가운데정렬 */
+    align-content: flex-end;
+    /* 컨텐츠가 하단으로 정렬/초과되는 부분은 하단으로 정렬 */
+    align-content: flex-start;
+    /* 컨텐츠가 상단으로 정렬/초과되는 부분은 하단으로 정렬(기본값) */
+    align-content: space-around;
+    /* 컨텐츠가 가운데 정렬/ 초과되는 부분은 세로길이값과 균등하게 배치된다. */
+    align-content: space-between;
+    /* 컨텐츠가 상단으로 정렬/초과되는 부분은 세로길이값을 균등하게 정렬(처음과 끝은 고정) */
+    margin: 50px 0;
+}
+.container5{
+    height: 600px;
+    background-color: #398;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container6{
+    margin: 50px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.container6 .box:nth-child(1){order: 3;}
+.container6 .box:nth-child(2){order: 1;}
+.container6 .box:nth-child(3){order: 2;}
+.container6 .box:nth-child(4){order: 4;}
+
+/* order는 순서를 설정할때 사용 / order 적용되지않은 요소가 우선순위로 잡히며,
+order를 모두 적용했을때 적용번호대로배치 */
+
+.container7{
+    display: flex;
+}
+.container7 .box:nth-child(2){
+    flex-grow: 2;
+    margin: 0 2%;
+}
+.container7 .box:nth-child(3){
+    flex-grow: 3;
+    margin-right: 2%;
+}
+/* flex-grow - 박스 확대 너비에 대한값을 지정하며, 기본값은0이며 ,음수값은적용이불가능 */
+
+.container8{
+    display: flex;
+    justify-content: space-around;
+}
+.container8 .box:nth-child(2){
+    flex-basis: 300px;
+}
+.container8 .box:nth-child(3){
+flex-basis: 50%;
+}
+/* 박스의 너비를 지정하며 단위를 지정할수 있으며, 기본값은 auto로 동작 */

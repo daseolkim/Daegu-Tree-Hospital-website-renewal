@@ -1,0 +1,35 @@
+@charset "utf-8";
+*{margin: 0; padding: 0;}
+ul{list-style: none;}
+a{text-decoration: none; color: #000;}
+html,body{width: 100%; height: 100%;}
+.section{width: 100%; height: 100%; position: relative;}
+.section:nth-child(1){background-color: #aaa;}
+.section:nth-child(2){background-color: #bbb;}
+.section:nth-child(3){background-color: #ccc;}
+.section:nth-child(4){background-color: #ddd;}
+.section:nth-child(5){background-color: #eee;}
+
+aside{
+    position: fixed;
+    width: 50px;
+    height: 50px; background: #ade;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.content-wrap{width: 1200px; margin: 0 auto; display: flex; align-items: center; height: 100%;}
+/* 컨텐츠 중앙에 오고 싶으면 얼라인 아이템즈에 센터 주고 세로값 100% 꼭 주기  */
+.section .content{width: 50%; padding: 100px 0; background: #dae; transition: 0.5s; opacity: 0;}
+/* 오퍼시티는 0이면 투명도라서 비지빌리티를 쓰면 영역도 없어진다 visibility: hidden;*/
+.section .content:nth-child(1){transform: translateX(-100px);}
+.section .content:nth-child(2){transform: translateX(100px);}
+.section .content.on{transform: translateX(0); opacity: 1;}
+
+
+
+
+
+.section .box{width: 50%; padding: 100px 0; background: rgb(139, 226, 255); transition: 0.5s;}

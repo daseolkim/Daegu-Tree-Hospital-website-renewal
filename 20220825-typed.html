@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #typed1{font-size: 20px; color: pink;}
+    </style>
+</head>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+    $("document").ready(function(){
+        let typed = new Typed("#typed1",{
+            stringsElement: "#typed",
+            typeSpeed: 50,
+            loop: true,
+            backSpeed: 50,
+            cursorChar: "😍"
+
+        })
+    })
+</script>
+<body>
+    <div id="typed">
+        <p>Lorem ipsum dolor sit amet.
+            <br>
+            가나다라마바사
+            <br>
+            저는 김다설입니다
+            <br>
+            여러줄을쓸때는이렇게하고 p태그는 따로 쓰면 같은줄에서 다른게 보임
+        </p>
+    </div>
+    <span id="typed1"></span>
+</body>
+</html>

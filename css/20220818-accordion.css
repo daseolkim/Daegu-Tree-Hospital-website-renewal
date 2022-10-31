@@ -1,0 +1,10 @@
+@charset "utf-8";
+*{margin: 0; padding: 0;}
+ul{list-style: none;}
+a{text-decoration: none; color: #000;}
+
+.faq{width: 100%; border-top: 2px solid #006896; box-sizing: border-box;}
+.faq ul li.q{padding: 20px 15px; cursor: pointer; border-bottom: 1px solid #e1e1e1;}
+.faq ul li.a{padding: 20px; background-color: #f2efef; border-bottom: 1px solid #e1e1e1; display: none;}
+
+/* 큐에이를 가릴려면 논처리해줌 */

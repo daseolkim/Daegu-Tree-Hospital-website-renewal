@@ -1,0 +1,55 @@
+@charset "utf-8";
+*{margin: 0 auto;}
+ul{list-style: none;}
+a{text-decoration: none ;color: #000;}
+
+$max-width: 1200px;
+$main-color: pink;
+$main-color2: orange;
+$sub-color: skyblue;
+
+
+@mixin flex($display, $justify) {
+    display: $display;
+    justify-content: $justify;
+}
+
+@mixin media($point){
+    @media #{$point}{
+        @content;
+    }
+}
+
+
+.header{width: 100%; padding: 10px 0; position: fixed; top: 0; background-color: $main-color; z-index: 99;
+   // 부모에 상속받고 싶으면 엔드를 쓰면됨 header-wrap이다원래는!
+.header-wrap{
+    max-width: $max-width; margin: 0 auto; align-items: center;
+    @include flex(flex, space-between);
+    .nav{
+        flex-basis: 50%;
+        ul{
+            // display: flex; justify-content: space-between;
+            @include flex(flex, space-between);
+            li{
+                position: relative;
+                a{
+                    color: #333;
+                    @include media("(max-width: 640px)"){
+                        font-size: 13px;
+                        color: $sub-color;
+                    }
+                }
+                &:hover{
+                    font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
+.content1{max-width: $max-width; margin: 0 auto; height: 60px; background-color: $sub-color; margin-top: 120px;}
+.content2{@extend .content1; margin-top: 0; background-color: $main-color;}
+.content3{@extend .content1; margin-top: 0; background-color: $main-color2;}
+// .content2{max-width: $max-width; margin: 0 auto; height: 60px; background-color: #dae;}
+// .content3{max-width: $max-width; margin: 0 auto; height: 60px; background-color: #cca;}

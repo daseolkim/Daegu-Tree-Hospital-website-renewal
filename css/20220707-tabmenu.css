@@ -1,0 +1,48 @@
+@charset "utf-8";
+*{margin: 0; padding: 0;}
+ul{list-style: none;}
+a{text-decoration: none; color: #000;}
+
+.tabmenu > *{display: none;}
+
+
+/* 블락을하면 다음줄로 넘어가니깐 인라인 */
+.tabmenu label{
+    display: inline-block;
+    width: 15%;
+    background-color: #eee;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    color: #777;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+    /* 왼쪽꼭짓점 부터 시계방향 */
+    border-width: 1px 1px 0 0;
+    border-radius: 3px 3px 0 0;
+}
+
+.tabmenu label:hover{
+    /* background-color: black; */
+    color: rgb(0, 0, 0);
+}
+.tabmenu .a:hover{background-color: red;}
+.tabmenu .b:hover{background-color: rgb(255, 196, 0);}
+.tabmenu .c:hover{background-color: rgb(229, 255, 0);}
+.tabmenu .d:hover{background-color: rgb(81, 255, 0);}
+.tabmenu .e:hover{background-color: rgb(0, 89, 255);}
+
+
+.tabmenu #tab1:checked ~ .tab1-content{display: block;}
+.tabmenu #tab2:checked ~ .tab2-content{display: block;}
+.tabmenu #tab3:checked ~ .tab3-content{display: block;}
+.tabmenu #tab4:checked ~ .tab4-content{display: block;}
+.tabmenu #tab5:checked ~ .tab5-content{display: block;}
+
+.tabmenu #tab1:checked ~ .a{background-color: red; color: #000;}
+.tabmenu #tab2:checked ~ .b{background-color: rgb(255, 196, 0); color: #000;}
+.tabmenu #tab3:checked ~ .c{background-color: rgb(229, 255, 0); color: #000;}
+.tabmenu #tab4:checked ~ .d{background-color: rgb(81, 255, 0); color: #000;}
+.tabmenu #tab5:checked ~ .e{background-color: rgb(0, 89, 255); color: #000;}

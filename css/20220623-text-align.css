@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+.left{text-align: left;}
+
+.center{text-align: center;}
+
+.right{text-align: right;}
+
+.justify{text-align: justify;}
+
+p{text-align-last: center; background-color: rgb(247, 173, 173); width: 50%;}
+span{text-align: right; background-color: aqua;}
+
+.box{text-align: center;}
+
+/* 
+text-align - 글자를 정렬할때 사용하는 속성
+left 가 기본값 별도로 입력하지 않음
+text-align 의 경우 영역(공간) 이 존재해야 동작
+
+ta + enter > left
+tac + enter > center
+tar + enter > right
+taj + enter >justify
+
+whdth - 가로
+height - 세로
+
+w값 > 가로 길이값 작성(px)이 동작 w값p 입력시 퍼센트로 동작
+
+h값 > 가로 길이값 작성(px)이 동작 h값p 입력시 퍼센트로 동작
+*/

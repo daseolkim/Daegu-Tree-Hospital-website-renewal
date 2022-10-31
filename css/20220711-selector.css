@@ -1,0 +1,77 @@
+@charset "utf-8";
+*{margin: 0; padding: 0;}
+.box p{color: rgb(158, 197, 79);}
+.box p:nth-child(3),
+.box p:nth-child(9){background-color: red;}
+
+.box p:nth-last-child(10){background-color: rgb(235, 182, 182);}
+
+.box p:nth-child(odd){background-color: rgb(179, 193, 255);}
+.box p:nth-child(even){background-color: rgb(101, 115, 179);}
+
+.box p:nth-child(3n){font-size: 20px;}
+.box p:nth-child(3n+2){font-size: 20px;}
+/* (숫자n+숫자) 앞에숫자는 배수, 뒤의 숫자는 시작지점이 된다 */
+.box p::selection{background-color: rgb(0, 255, 64);}
+/* 드래그한곳 색상 변경 */
+
+.box p:not(:nth-child(7)){background-color: rgb(0, 140, 255);}
+/* 7번빼고 전부 다 선택 */
+.box p:first-child{background-color: rgb(255, 0, 140);}
+/* 1번만 선택 */
+.box p:last-child{background-color: rgb(255, 104, 210);}
+/* 마지막만 선택 */
+
+.item p:nth-child(2){background-color: rgb(255, 195, 195);}
+.item span:nth-child(3){background-color: rgb(139, 39, 39);}
+
+.item span:nth-of-type(2){background-color: rgb(49, 29, 139);}
+
+.item span:nth-last-of-type(3){background-color: #aaa;}
+
+.item p:hover ~span{font-size: 100px;}
+
+
+/* :nth-child(n) / :nth-of-type(n) / :nth-last-child(n)  / :nth-last-of-type(n)/ 
+:first-child / :last-child / :first-of-type / :last-of-type
+n은 자연수 혹은 수식을 사용할 수있다.
+
+<div class="item">
+    <p>1234</p>
+    <p>1234</p>
+    <span>가나다</span>
+    <span>가나다</span>
+    <p>1234</p>
+    <p>1234</p>
+    <span>가나다</span>
+    </div> */
+
+/* 위 예제 기준으로 .item p:nth-child(3)을 선택할경우 자식 기준으로는 span 태그가 존재하기에 선택되지 않는다.a
+p태그 기준으로 :nth-child() 1/2/5/6
+span태그 기준으로 :nth-child()3/4/7
+:nth-of-type() 기준으로 태그 요소로 선택되므로 p태그는 1234 / span123 으로 선택가능하다. */
+
+/* :nth-child(n)  자식요소기준으로 순서대로 내려온다.
+:nth-of-type(n) 요소기준으로 순서대로 내려온다.
+:first-child 자식 기준 첫번째 요소가 있다면 선택
+:last-child 자식 기준 마지막 요소가 있다면 선택
+:nth-last-child(n) 자식 기준 마지막 부터역순으로 선택
+:nth-last-of-type(n) 요소 기준 마지막 부터 역순으로 선택
+:first-of-type 요소기준 첫번째 선택
+:last-of-type 요소기준 마지막을 선택
+(odd) 홀수를 선택 /  (even) 짝수를 선택
+(2n) 2의 배수를 선택 (3n) 3의 배수를 선택 (4n) 4의 배수를 선택
+(2n+7) 시작번호가 7번부터 2의 배수로 선택 ( 7 9 11 13 15 17 19...)
+(3n+2) 시작번호가 2번부터 3의 배수로 선택 (2 5 8 11 14 17 20..)
+(5n-3) 5-2 = 2 이므로 2번부터 5의 배수로 선택 (2 7 12 17 22 27..)
+(4n-2) 4-2 = 2 이므로 4의 배수로 선택 ( 2 6 10 14 18 22...)
+(3n-2) 3-2  = 1 이므로 1번부터 3의 배수로 선택 ( 1 4 7 10 13...)
+
+~ 인접 선택자 / +형제 선택자 / , 그룹선택자 / 공백을 자손 선택자 / > 자식선택자 / * 전체선택자
+
+* > 모두 선택된다. 부모 요소를 작성시 부모의 자식을 모두 선택한다.
++ 의 경우 한단계 이상 건너 뛸수 없으며 , 선택된 요소는 하나만 선택
+~ 의 경우 해당요소 기준으로 모두 선택된다
+그룹 선택자의 경우 마지막에는 ,를 생략한다.
+> 자식 선택자는 부모 요소 바로 아래 단계 요소를 선택
+공백 자손 선택자는 해당 선택자 기준으로 아래 모든 요소를 선택 */

@@ -1,0 +1,148 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+*{margin: 0; padding: 0; font-family: 'Noto Sans KR', sans-serif;}
+ul{list-style: none;}
+a{text-decoration: none; color: #000;}
+
+/* 흰색배경이지만 흰색 넣어주기 */
+.header{
+    background-color: #fff;
+    width: 100%;
+}
+/* 끝부분을 비어있게 하고싶으면 패딩에 0,2%  */
+.header .header-wrap{
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 2%;
+    overflow: hidden;
+}
+
+.header .member{
+    display: flex;
+    justify-content: flex-end;
+    height: 54px;
+    align-items: flex-end;
+    /* 세로길이 값이 없으면 동작안함  믿으로 떨어뜨림*/
+}
+.header .member ul{
+    display: flex;
+}
+.header .member ul li{
+    position: relative;
+    /* 기준점 잡아줌 | 이거 넣으려고 */
+}
+.header .member ul li:nth-child(1){margin-right: 8px; padding-right: 8px;}
+.header .member ul li:nth-child(1)::after{
+    content:"";
+    position: absolute;
+    width: 1px;
+    height: 12px;
+    background-color: #ccc;
+    right: 0;
+    top: 8px;
+}
+.header .member ul li a{font-size: 14px;}
+.header .logo{margin-bottom: 25px;}
+.header .nav{
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    margin-right: 40px;
+    padding-bottom: 18px;
+}
+/* 모든글자가 대문자로 바뀜 ttu} */
+.header .nav ul{
+    display: flex;
+    width: 90%;
+    justify-content: flex-end;
+    flex-wrap: wrap;}
+.header .nav ul li{
+    margin: 0 30px;
+    letter-spacing: -1px;
+}
+
+#menu-btn + label{
+    position: fixed;
+    right: 20px;
+    top: 30px;
+    transition: 1s;
+    z-index: 2;
+    cursor: pointer;
+    display: none;
+}
+#menu-btn + label .btn-line{
+    width: 30px;
+    height: 5px;
+    background-color: #000;
+    display: block;
+    /* 스펜테그는 디스플레이 블락 해줘야지 보임 */
+    border-radius: 5px;
+    margin: 5px;
+    transition: 1s;
+
+}
+#menu-btn{display: none;}
+#menu-btn:checked + label .btn-line{background-color: #fff;}
+#menu-btn:checked + label .btn-line:nth-child(1){transform: rotate(45deg) translateY(14px);}
+#menu-btn:checked + label .btn-line:nth-child(2){opacity: 0;}
+#menu-btn:checked + label .btn-line:nth-child(3){transform: rotate(-45deg ) translateY(-14px);}
+.m-menu{
+    position: fixed;
+    width: 300px; height: 100%;
+    background-color: #333;
+    right: -300px;
+    top: 0;
+    transition: 1s;
+}
+.m-menu .member-login{margin: 20px; margin-top: 100px;}
+.m-menu .member-login ul{display: flex; justify-content: space-between;}
+.m-menu .member-login ul li{flex-basis: 48%; text-align: center; padding: 10px 0;}
+.m-menu .member-login ul li:nth-child(1){background-color: #6cc043;}
+.m-menu .member-login ul li:nth-child(2){background-color: #8aeb6a;}
+.m-menu .member-login ul li a{display: inline-block; width: 100%; color: #fff;
+}
+
+#menu-btn:checked ~ .m-menu{right: 0;}
+
+.m-menu > ul{padding-top: 50px;}
+.m-menu > ul li{height: 40px; line-height: 40px; padding: 10px 0 10px 20px; margin: 0 20px; border-top: 1px solid #555; position: relative; }
+/* 꺽쇠 오른쪽으로 보내려면 기준점 잡아주기 */
+.m-menu > ul li:nth-child(6){
+border-bottom: 1px solid #555;
+}
+/* 라스트차일드 써도됨 */
+.m-menu > ul li i{
+    font-size: 24px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.m-menu > ul li i a{
+    color: #fff;
+    text-transform: uppercase;
+    display: inline-block;
+    width: 100%;
+}
+
+/* 테블릿 */
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+    .header .member{align-items: center;}
+    .header .logo{text-align: center;}
+    /* 플렉스 안쓰고 마진 바톰만 써서 텍스트얼라인 센터가 먹힘 */
+}
+.header .nav{
+    margin-right: 0;
+}
+.header .nav ul{flex-basis: 100%; width: auto; justify-content: space-between;}
+/* 아까 90%준걸 플렉스 베이시스로 100% / 저스티파이 컨텐츠로 양쪽 정렬해줌*/
+.header .nav ul li{margin: 0 15px;}
+
+/* 모바일 */
+@media screen and (max-width:640px) {
+    .header .member{display: none;}
+    .header .logo{width: 194px; margin-top: 33px;}
+    .header .logo img{width: 100%;}
+    .header .nav{display: none;}
+    #menu-btn + label{display: block;}
+}

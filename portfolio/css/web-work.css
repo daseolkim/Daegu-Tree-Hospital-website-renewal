@@ -1,0 +1,96 @@
+@charset "utf-8";
+
+.content .work-wrap{
+    max-width: 1200px; margin: 0 auto; padding-bottom: 100px;
+}
+.content .work-content{
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 50px 30px 100px;
+    box-shadow: 3px 3px 10px 1px rgba(0,0,0,0.2);
+    display: flex;
+    border: 1px solid #ddd;
+    margin-bottom: 100px;
+}
+.content .work-content:last-child{margin-bottom: 0;}
+
+.content .work-content p{
+    font-size: 1em;
+    padding: 10px 0 10px 50px;
+}
+.content .work-content .work-img{
+    flex-basis: 48%;
+    position: relative;
+}
+.content .work-content .work-img img{width: 100%;}
+.content .work-content .work-img > div{position: absolute;}
+.content .work-content .work-img .pc{width: 85%; left: 50%; bottom: 0; transform: translateX(-50%); overflow: hidden;}
+.content .work-content .work-img .pc::after{content: ""; position: absolute; width: 93%; height: 62%; background: url(../images/preview.jpg) center top no-repeat; left: 15px; top: 22px; background-size: cover; transition: 5s;}
+.content .work-content .work-img .tablet{width: 35%; right: 0; bottom: 0; overflow: hidden;}
+.content .work-content .work-img .tablet::after{content: ""; position: absolute; width: 86%; height: 81%; background: url(../images/preview.jpg) center top no-repeat; left: 15px; top: 22px; background-size: cover; transition: 5s;}
+.content .work-content .work-img .mobile{width: 23%; left: 0; bottom: 0;}
+.content .work-content .work-img .mobile::after{content: ""; position: absolute; width: 90%; height: 93%; background: url(../images/preview.jpg) center top no-repeat; left: 7px; top: 7px; background-size: cover; transition: 5s; border-radius: 5px;}
+
+.content .work-content .work-img > div:hover::after{background-position: center bottom;}
+.content .work-content .work-desc{flex-basis: 55%; padding-top: 20px;}
+.content .work-content .work-desc p:nth-child(1){font-weight: bold; font-size: 2em;}
+.content .work-content .work-desc p:nth-child(2){font-size: 1.2em;}
+.content .work-content .work-desc p span{width: 20px; height: 20px; display: inline-block; vertical-align: middle;}
+/* 스펜테그는 인라인블락으로 변경 가로세로 변경이안됨 인라인블락에만 동작하는 수직정렬 버티컬얼라인 미들은 설정하면 컬러가 수직정렬됨 */
+.content .work-content .work-desc p span:nth-child(1){background-color: rgb(0, 204, 255);}
+.content .work-content .work-desc p span:nth-child(2){background-color: rgb(255, 145, 0); margin: 0 10px;}
+.content .work-content .work-desc p span:nth-child(3){background-color: coral;}
+
+.content .work-content .work-desc .btn-wrap ul{display: flex; justify-content: center; width: 100%; flex-wrap: wrap; margin-top: 25px;}
+
+.content .work-content .work-desc .btn-wrap ul li{padding: 2% 6%; text-transform: uppercase; font-weight: 500; background-color: #fff; border: 1px solid #ddd; flex-basis: 10%; border-radius: 5px; cursor: pointer; transition: 0.5s;}
+.content .work-content .work-desc .btn-wrap ul li:nth-child(2){margin: 0 4%;}
+.content .work-content .work-desc .btn-wrap ul li a{transition: 0.3s 0.1s;}
+.content .work-content .work-desc .btn-wrap ul li:hover{box-shadow: -120px 0 0 0 #ffa31b inset, inset 120px 0 0 0 #ffa31b;}
+.content .work-content .work-desc .btn-wrap ul li:hover a{color: #fff;}
+
+
+/* 교차로 표현할떄 */
+.content .work-content:nth-child(2n) .work-img{order: 2;}
+.content .work-content:nth-child(2n) .work-desc{order: 1;}
+
+
+
+/* 모바일 테블릿 공통 */
+@media screen and (max-width: 1200px){
+    .content .work-content:nth-child(2n) .work-img{order: 1;}
+    .content .work-content:nth-child(2n) .work-desc{order: 2;}
+    .content .work-content{flex-wrap: wrap;}
+    .content .work-content .work-img{flex-basis: 100%; height: 500px;}
+    .content .work-content .work-img .pc{width: 550px;}
+    .content .work-content .work-img .tablet{right: 0; width: 184px;}
+    .content .work-content .work-img .mobile{left: 0; width: 126px;}
+    .content .work-content .work-desc{flex-basis: 100%; padding-top: 40px;}
+}
+/* 테블릿 */
+@media screen and (min-width: 641px) and (max-width: 1200px) {
+    .content .work-content{padding-bottom: 50px;}
+}
+
+/* 모바일 */
+@media screen and (max-width: 640px) {
+    .content .work-content .work-img .work-img{height: 70.3125vw;}
+    .content .work-content .work-img .pc{width: 100%;}
+    .content .work-content .work-img .tablet{width: 35%;}
+    .content .work-content .work-img .mobile{width: 20%;}
+
+    .content .work-content .work-img .pc::after{width: 92.5%; left: 3.8%; top: 4.7%;}
+    .content .work-content .work-img .tablet::after{left: 8%; top: 8%;}
+    .content .work-content .work-img .mobile::after{height: 92.5%; left: 5.5%; top: 2.5%;}
+
+    .content .work-content .work-desc p{padding-left: 0px;}
+    .content .work-content .work-desc .btn-wrap ul{flex-wrap: nowrap;}
+    .content .work-content .work-desc .btn-wrap ul li{flex-basis: 30%; padding: 2% 0; text-align: center;}
+}
+
+
+
+
+
+
+.footer{position: relative;}

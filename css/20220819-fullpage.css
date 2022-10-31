@@ -1,0 +1,30 @@
+@charset "utf-8";
+*{margin: 0;padding: 0;}
+a{text-decoration: none;}
+
+.nav{position:  fixed; width: 100%; top: 0; z-index: 1; border-bottom: 1px solid #fff;}
+.nav ul{max-width: 1200px; margin: 0 auto; display: flex; list-style: none;
+justify-content: space-between; padding: 25px 0;}
+.nav ul li a{text-decoration: none; color: #fff; font-size: 20px;}
+
+
+.fp-slidesNav{text-align: center;}
+
+/* 선택자 변경하면안됨 */
+#fp-nav ul li .fp-tooltip{
+    color: rgb(255, 0, 0);
+    padding: 5px 20px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #fff;
+}
+
+
+#fp-nav ul li .fp-tooltip.on{
+    width: auto;
+    opacity: 1;
+}
+
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span{background-color: #fff;}

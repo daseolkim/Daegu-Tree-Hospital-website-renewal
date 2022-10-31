@@ -1,0 +1,27 @@
+@charset "utf-8";
+*{margin: 0; padding: 0;}
+
+.pc{
+    width: 1050px;
+    height: 700px;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+}
+
+.pc img{width: 100%;}
+.pc::after{
+    content:"";
+    position: absolute;
+    width: 820px;
+    height: 460px;
+    background: url("http://www.numbermin.com/images/portfolio/01_com2petstory.jpg")
+    center top no-repeat;
+    left: 113px;
+    top: 52px;
+    background-size: cover;
+}
+.pc:hover::after{
+    background-position: center bottom;
+    transition: 10s linear;
+}

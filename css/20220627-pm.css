@@ -1,0 +1,106 @@
+@charset "utf-8";
+
+.box{
+    width: 250px; height: 100px;
+    background-color: rgb(186, 140, 247);
+}
+
+.item1{
+    padding: 30px;
+    padding-top: 50px;
+    padding-right: 100px;
+    padding-bottom: 80px;
+    padding-left: 70px;
+    padding: 50px 100px 80px 70px;
+    padding: 100px 30px 70px;
+    padding: 100px 50px;
+    /* box-sizing: border-box; */
+}
+
+/* 
+padding- 안쪽여백 > 실제 컨텐츠영역 "포함" 시킨다
+box-sizing : border-box 를 사용시 가로영역은 늘어나지 않으며, 세로영역을 포함시킨다.
+padding 자체를 적용
+음수사용이 불가능 - 예 padding: -30px (x)동작하지 않음
+
+p값(수치) + enter >4방향 동일하게 padding이 동작
+p(방향)+값(수치) + enter >해당 방향으로 padding이동작
+4개의 값이 모두 다르다면 top 부터 시계방향으로 동작한다. (top > right > bottom >left)
+3개의 값을 사용하게 되면 위 (오른쪽 +왼쪽) 아래로 동작 > 오른쪽과 왼쪽은 같은 값
+2개의 값을 사용하게 되면 (위+아래)/ (오른쪽 +왼쪽) 으로 동작> 위 아래가 같고/ 왼쪽, 오른쪽 값이 같음
+1개의 값을 사용하게 되면 4방향 모두 동일한 값으로 동작
+pt값 / pr값 / pb값 / pl값
+padding-top / padding-right / padding-bottom / padding-left
+
+*/
+
+.item2{
+    margin: 30px; 
+    margin: 50px 0;
+    margin: 50px 30px 70px;
+    margin: 50px 20px 80px 100px;
+    margin-top: -50px;
+}
+/* 
+magin -  외부여백 그 외 모든 사용법은 padding과 동일
+실제 컨텐츠는 늘어나지 않으며, 음수 사용이 가능
+예 ) margin-left: -50px;
+*/
+.item3{
+    margin: 0 auto;
+    width: 90%;
+    width: 100%;
+}
+/* 
+magin 속성을 위아래는 값을 0을 주고 오른쪽 왼쪽 남은 여백을 균등하게 분배하기 위해 auto 속성을 사용한다.
+여백이 있어야 동작한다. 즉 100% 일때는 여백이 없으므로 동작하지 않는다.
+text-align -  영역 내 컨텐츠를 정렬
+magin:0 auto - 남은 영역 자체를 정렬
+*/
+
+*{margin: 0;padding: 0;}
+.notice{
+    background-color: #eee;
+    height: 50px;
+    width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 50px;
+}
+.notice a{
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+}
+.line-box{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.line-box .line{
+    width: 25px;
+    height: 5px;
+    background-color: #000;
+    margin: 5px;
+    border-radius: 3px;
+    
+}
+.line-box .line2{width: 15px;}
+.line-box .line3{width: 20px;}
+
+.line-box:hover .line{
+    background-color: rgb(2, 194, 18);
+    transition: 1s;
+}
+.content{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(0, 114, 80);
+}
+.content .content-wrap{
+    width: 1200px;
+    height: 100px;
+    background-color: rgba(62, 231, 104, 0.527);
+    margin: 0 auto;
+}

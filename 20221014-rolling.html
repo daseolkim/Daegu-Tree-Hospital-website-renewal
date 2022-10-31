@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        ul{list-style: none;}
+        a{text-decoration: none; color: #000;}
+        .rolling{max-width: 640px; margin: 0 auto; background-color: #eee; overflow: hidden; height: 70px;} 
+        .rolling ul li{animation:  up 5s infinite; display: flex; flex-direction: column; height: 70px;}
+        .rolling ul li{height: 70px; line-height: 70px; padding-left: 20px;}
+        @keyframes up {
+            0%{transform: translateY(0);}
+            10%{transform: translateY(0);}
+            20%{transform: translateY(-100%);}
+            30%{transform: translateY(-100%);}
+            40%{transform: translateY(-200%);}
+            50%{transform: translateY(-200%);}
+            60%{transform: translateY(-300%);}
+            70%{transform: translateY(-300%);}
+            80%{transform: translateY(-400%);}
+            90%{transform: translateY(-400%);}
+            100%{transform: translateY(-100%);}
+        }
+
+        .rolling2{
+            max-width: 640px; margin: 0 auto; background-color: #eee; overflow: hidden; height: 70px;
+        }
+        .rolling2 .rolling-wrap{
+            width: 200%;
+            display: flex;
+            animation: left 5s infinite linear;
+        }
+        .rolling2 .rolling-wrap ul{display: flex; flex-shrink: 0;}
+        .rolling2 .rolling-wrap ul li{padding: 20px;}
+
+        @keyframes left{
+            0%{transform: translateX(0);}
+            100%{transform: translateX(-71.1%);}
+        }
+
+    </style>
+</head>
+<body>
+    <div class="rolling">
+        <ul>
+            <li>1.가나다라</li>
+            <li>2.룰루랄라</li>
+            <li>3.하하하하</li>
+            <li>4.호호호호</li>
+            <li>5.히히히히</li>
+            <li>1.가나다라</li>
+        </ul>
+    </div>
+    <div class="rolling2">
+        <div class="rolling-wrap">
+            <ul>
+                <li><a href="#">1234</a></li>
+                <li><a href="#">5678</a></li>
+                <li><a href="#">가나다</a></li>
+                <li><a href="#">라마바</a></li>
+                <li><a href="#">사아자</a></li>
+                <li><a href="#">1234</a></li>
+                <li><a href="#">5678</a></li>
+                <li><a href="#">가나다</a></li>
+                <li><a href="#">라마바</a></li>
+                <li><a href="#">사아자</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">1234</a></li>
+                <li><a href="#">5678</a></li>
+                <li><a href="#">가나다</a></li>
+                <li><a href="#">라마바</a></li>
+                <li><a href="#">사아자</a></li>
+                <li><a href="#">1234</a></li>
+                <li><a href="#">5678</a></li>
+                <li><a href="#">가나다</a></li>
+                <li><a href="#">라마바</a></li>
+                <li><a href="#">사아자</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

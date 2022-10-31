@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+.item{
+    width: 200px;
+    height: 200px;
+    transition: 1s;
+}
+.tr1{background-color: rgb(123, 243, 203);}
+.tr1:hover{
+    transform: rotate(-45deg);
+    transform: rotateX(-90deg);
+    transform: rotateY(-180deg);
+}
+/* transform 변형속성 기본값은 none
+rotate 회전속성 / 기본값은 x+y가 합쳐진속성
+단독으로 사용가능 예를들어 rotateX / rotateY > X,Y는 대문자권장
+단위>각도(deg)
+*/
+
+.tr2{background-color: #dae;}
+.tr2:hover{
+    transform: scale(2,0.1);
+    transform: scaleX(2);
+    transform: scaleY(2);
+}
+/* 
+scale - 확대속성 / 기본값은 x+y가 합쳐진 속성
+
+단독으로 사용가능 예를들어 rotateX / rotateY > X,Y는 대문자권장
+단위없음 배수임
+
+x와 y를 같이 써야 되나, 값이 다르면 ,를 이용해서 값을 설정한다.
+예) scale(1.5, 3)
+*/
+
+.tr3{background-color: #aaa;}
+.tr3:hover{
+    transform: skew(-45deg, -45deg);
+    transform: skewX(-20deg);
+    transform: skewY(-20deg);
+    /* 
+    skew- 기울임 / 기본값은 X,Y가 합쳐져 있으나 , 값이 같더라도 반드시 , 를 통해서
+    2번 입력해야 동작합니다. 만약 미 입력시 X축이 동작..
+    예)skew(30deg, 30deg)
+    단독으로 사용가능 예를들어 skewX / skewY > X,Y는 대문자권장
+    */
+}
+.tr4{background-color: rgb(143, 90, 90);}
+.tr4:hover{
+    transform: translate(50px, 50px);
+    transform: translateX(50%);
+    transform: translateY(-50%) scale(2) rotate(45deg);
+    /* 같이사용도 가능하다. 대신에 띄워쓰기 해줘야함 */
+}

@@ -1,0 +1,157 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+*{margin: 0; padding: 0; font-family: 'Noto Sans KR', sans-serif;}
+ul{list-style: none;}
+a{text-decoration: none; color: #000;}
+body{background-color: #f9f7f9;}
+
+/* 메뉴화면 동일 */
+/* 메뉴는화면에서 고정 */
+.header{
+    width: 100%;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    z-index: 99;
+}
+.header .header-wrap{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    /* 양쪽정렬인데 여백을 안주는거 어라운드를 쓰면 공간이생김 */
+    align-items: center;
+    /* 세로축에서 가운데로 보내는 속성 */
+}
+/* 배경을 넣으면 확인이가능하니 넣어서확인 */
+.header .nav{flex-basis: 50%;}
+.header .nav ul{
+    display: flex;
+    justify-content: space-between;
+}
+.header .nav ul li{
+    position: relative;
+    /* 마우스올리면 밑줄끄이도록기준점 */
+}
+.header .nav ul li::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    bottom: 0;
+    left: 0;
+    transition: 1s;
+    transform: scaleX(0);
+}
+.header .nav ul li a{
+    color: #333;
+}
+.header .nav ul li.on{font-weight: bold;}
+.header .nav ul li.on a{color: #000;}
+.header .nav ul li.on::after,
+.header .nav ul li:hover::after{transform: scaleX(1);}
+
+/* etc메뉴 */
+.header .etc{flex-basis: 10%;}
+.header .etc ul{display: flex; justify-content: space-between;}
+.header .etc ul li{flex-basis: 50%; text-align: center; position: relative;}
+.header .etc ul li i{font-size: 1.5em;}
+.header .etc ul li ul{position: absolute; width: 80px; top: 30px;left: -10px; background-color: #fff;border-radius: 5px; transition: 0.5s; flex-wrap: wrap; height: 0; overflow: hidden;
+}
+.header .etc ul li ul li{width: 100%; flex-basis: 100%; line-height: 40px;}
+.header .etc ul li ul li.on,
+.header .etc ul li ul li:hover{font-weight: bold;}
+
+.header .etc ul li:nth-child(2):hover ul{height: 80px;}
+
+
+
+
+/* 푸터 동일 */
+.footer{
+    width: 100%;
+    padding: 25px 0;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+}
+.footer p{
+    text-align: center;
+    letter-spacing: -1px;
+    color: #9f9f9f;
+}
+.m-btn{position: fixed; right: 20px; top: 20px; transition: 1s; z-index: 101; cursor: pointer; display: none;}
+.m-btn .line{width: 30px; height: 5px; background-color: #000; border-radius: 5px;
+margin: 5px; transition: 1s;}
+.m-btn .line:nth-child(2){width: 20px;}
+.m-btn .line:nth-child(3){width: 10px;}
+
+.m-btn.on .line:nth-child(1){transform: rotate(45deg) translateY(14px);}
+.m-btn.on .line:nth-child(2){opacity: 0;}
+.m-btn.on .line:nth-child(3){transform: rotate(-45deg) translateY(-14px); 
+    /* 가로를 일부러 30주는 이유는 x가 이상해서 */
+    width: 30px;}
+.m-nav{position: fixed; width: 300px; height: 100%; background-color: #fff; right: -300px;
+z-index: 100; top: 0; overflow: hidden; padding: 50px; box-sizing: border-box; transition: 0.5s;} 
+.m-nav.on{right: 0;}
+.m-nav .pic{width: 100%; text-align: center; margin-top: 25px;}
+.m-nav .pic img{border-radius: 50%; margin-bottom: 1em;}
+.m-nav .pic p{color: #000; font-weight: bold; font-size: 1em;}
+.m-nav ul{margin-top: 50px;}
+.m-nav ul li{padding: 20px 0; border-bottom: 1px solid #000; font-size: 1.25em;}
+.m-nav ul li i{margin-right: 20px;}
+.m-nav ul li i a{color: #000;}
+
+/* 화면어두워지게 */
+.window{position: fixed; z-index: 99; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); top: 0; left: 0; display: none;}
+
+/* 다크모드 */
+.dark-btn{position: fixed; background-color: #333; right: 20px; bottom: 80px; padding: 10px 15px; border-radius: 5px; cursor: pointer; display: none;}
+/* pc버전에는 필요없으니깐 디스플레이 논 */
+.dark-btn i{color: #fff; font-size: 24px;}
+
+.content{width: 100%; padding: 0 2%; box-sizing: border-box;}
+.content .content-wrap{max-width: 1200px; margin: 176px auto 100px; padding: 25px 0; background-color: #fff; box-shadow:3px 3px 10px 1px rgba(0,0,0,0.2); border-radius: 7px; border: 1px solid #ccc; display: flex; flex-wrap: wrap;box-sizing: border-box; }
+
+.content .title{flex-basis: 100%; text-align: center; font-size: 2em;}
+.content .title h3{position: relative;}
+.content .title h3::after{content: ""; position: absolute; width: 3%; height: 3px; background-color: #000; bottom: -5px; left: 50%; transform: translateX(-50%);}
+/* 엡솔로 설정해서 좌표로 이동가능 */
+
+
+.window-content{width: 80%; height: 100%; position: fixed; background-color: #fff;
+top: 0; left: 50%; transform: translateX(-50%); z-index: 999; overflow-y: scroll; display: none;}
+.window-content i{font-size: 3vw; cursor: pointer; color: #000; position: absolute; right: 50px; top: 20px;}
+.window-content img{width: 100%;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 반응형 */
+@media screen and (min-width: 641px) and (max-width: 1200px){
+    .header .header-wrap .logo{margin-left: 12px;}
+    .header .etc{flex-basis: 15%;}
+    .header .etc ul{justify-content: center;}
+    .content .title h3::after{width: 5%;}
+    .content .title h3{font-size: 1.2em;}
+}
+@media screen and (max-width: 640px){
+    .header .etc ul li{display: none;}
+    .header .nav{display: none;}
+    .header .header-wrap .logo{margin-left: 12px;}
+    .m-btn{display: block;}
+    .dark-btn{display: block;}
+    .content .title h3::after{width: 7%;}
+    .content .title h3{font-size: 0.8em;}
+}

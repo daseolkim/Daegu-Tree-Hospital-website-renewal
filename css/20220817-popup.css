@@ -1,0 +1,33 @@
+@charset "utf-8";
+*{margin: 0; padding: 0;}
+a{text-decoration:none; color: #000;}
+
+.popup{width: 100%;}
+.popup .popup-content{
+    background-color: #e3c6f3;
+    text-align: center;
+    padding: 25px;
+    font-size: 24px;
+    letter-spacing: -2px;
+}
+
+
+.popup .popup-btn{
+    text-align: right;
+    width: 1200px;
+    margin: 0 auto;
+}
+.popup .popup-btn a{
+    background-color: #981cad ;
+    width: 70px;
+    display: inline-block;
+    font-size: 13px;
+    color: #fff;
+    text-align: left;
+    padding: 5px 10px;
+    position: relative;
+
+}
+.popup .popup-btn a i{position: absolute; right: 10px; top: 7px;}
+.popup .popup-btn a::after{content: "팝업닫기"}
+.popup .popup-btn a.on::after{content: "팝업열기"}

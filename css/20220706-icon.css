@@ -1,0 +1,12 @@
+@charset "utf-8";
+*{margin: 0;padding: 0;}
+
+.fa-face-meh{color: blueviolet; font-size: 150px;}
+/* 폰트어썸 */
+.xi-beach{color: blue; font-size: 150px;}
+/* xi아이콘 */
+.heart-outline {color: crimson; font-size: 300px;}
+.heart-outline:hover{color: rgb(253, 110, 187);}
+/* 아이온아이콘 */
+.heart-circle-outline{color: rgb(0, 92, 64); font-size: 100px;}
+.heart-circle-outline:hover{ color: rgb(94, 255, 0); font-size: 300px;}

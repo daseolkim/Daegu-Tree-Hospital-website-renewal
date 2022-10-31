@@ -1,0 +1,66 @@
+@charset "utf-8";
+p{
+    font-family: 'Hi Melody', cursive;
+    font-family: 'Noto Serif KR', serif;
+    font-family: 'Unica One', cursive;
+    background-color: orange;
+    height: 100px;
+    text-align: center;
+    font-size: 40px;
+    font-style: italic;
+    /* 글자의 스타일 - italic - 기울임 / nomal - 기본값 */
+    font-weight: 100;
+    font-weight: 200;
+    font-weight: 300;
+    font-weight: 400;
+    font-weight: 500;
+    font-weight: 600;
+    font-weight: 700;
+    font-weight: 800;
+    font-weight: 900;
+    font-weight: bold;
+    /*  글자의 크기 - px em rem vm vh % vmin xmax 등 다양한 단위를 사용 할 수있다. */
+    line-height: 100px;
+    /* 글자의 굵기 100~900 사용가능 기본값은 400 / bold 600or700으로 적용
+    경우에 따라 해당 폰트에서 특정 수치를 지원하지 않는 경우가 있다. */
+    /* line-height: 100px; */
+    /* font-size값 line-height값
+ line-height > 줄간격- 세로길이 값과 줄간격의 길이값이 동일 하면 영역의 가운데에 위치한다.
+ line-height 적용시 px단위 확인 */
+}
+
+    
+span{font-family: 'Unica One', cursive;
+    font-family: 'HSGyeoulNoonkott20';
+    background-color: rgb(69, 212, 124);
+    font-size: 50px;
+    line-height: 100px;
+    
+    
+}
+
+
+@font-face {
+    font-family: 'HSGyeoulNoonkott20';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/HSGyeoulNoonkott20.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+h3{ font-family: 'yleeMortalHeartImmortalMemory';
+    font-size: 60px;
+}
+
+h2{font-family: 'PyeongChangPeace-Bold';}
+
+@font-face {
+    font-family: 'yleeMortalHeartImmortalMemory';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/yleeMortalHeartImmortalMemory.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PyeongChangPeace-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}

@@ -1,0 +1,7 @@
+@charset "utf-8";
+
+.a{text-align: left; cursor: move; font-size: 30px;}
+.b{text-align: center; cursor: pointer; font-size: 50px;}
+.c{text-align: right; cursor: help; font-size: 40px;}
+.d{text-align: justify; cursor: url("http://greenart-web.com/cursor.png") 0 0,auto}
+div{background-color: rgb(198, 168, 255);}

@@ -1,0 +1,11 @@
+@charset "utf-8";
+*{margin: 0;padding: 0;}
+.swiper{width: 100%; height: 500px;}
+.swiper .swiper-slide img{width: 100%;}
+/* 화살표 색바꾸는거 */
+.swiper .swiper-button-next,
+.swiper .swiper-button-prev{color: rgb(255, 0, 0);}
+
+/* 동그라미 색바꾸는거  */
+.swiper-pagination-bullet{transition: 0.3s;}
+.swiper-pagination-bullet-active{background-color: rgb(255, 0, 0); width: 30px; border-radius: 30px;}

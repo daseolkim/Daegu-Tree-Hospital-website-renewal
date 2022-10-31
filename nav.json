@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "nav":"메뉴1",
+        "link": "home.html"
+    },
+    {
+        "id": 2,
+        "nav":"메뉴2",
+        "link": "about.html"
+    },
+    {
+        "id": 3,
+        "nav":"메뉴3",
+        "link": "work.html"
+    },
+    {
+        "id": 4,
+        "nav":"메뉴4",
+        "link": "app.html"
+    },
+    {
+        "id": 5,
+        "nav":"메뉴5",
+        "link": "contact.html"
+    }
+]

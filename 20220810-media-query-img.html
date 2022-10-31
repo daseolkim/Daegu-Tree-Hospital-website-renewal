@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/20220810-media-query-img.css">
+</head>
+<body>
+    <div class="img-box">
+        <div class="item">
+            <img src="https://via.placeholder.com/300" alt="img">
+        </div>
+        <div class="item">
+            <img src="https://via.placeholder.com/300" alt="img">
+        </div>
+        <div class="item">
+            <img src="http://placekitten.com/300" alt="img">
+        </div>
+        <div class="item">
+            <img src="https://via.placeholder.com/300" alt="img">
+        </div>
+    </div>
+
+    <div class="img">
+        <picture>
+            <source media="(max-width: 640px)" srcset="https://via.placeholder.com/640x720">
+            <source media="(max-width: 1024px)" srcset="https://via.placeholder.com/1024x720">
+            <img src="https://via.placeholder.com/1920x720" alt="img">
+        </picture>
+    </div>
+    <div class="bg-img"></div>
+</body> 
+</html>

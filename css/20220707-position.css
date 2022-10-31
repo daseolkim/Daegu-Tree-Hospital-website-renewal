@@ -1,0 +1,92 @@
+@charset "utf-8";
+*{margin: 0; padding: 0;}
+
+.box1{
+    width: 200px;
+    height: 200px;
+    background-color: #297;
+    left: 200px;
+    top: 200px; 
+    /* position: relative; */
+    z-index: 1;
+}
+.box2{
+    width: 400px;
+    height: 400px;
+    background-color: #784;
+    position: relative;
+    z-index: 2;
+}
+.box2 .box{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #178;
+    right: 0;
+}
+
+
+body{height: 6000px;}
+.box3{
+    height: 60px;
+    background-color: rgb(155, 255, 56);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 3;
+}
+.box4{
+    width: 50px;
+    height: 50px;
+    background-color: #666;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+}
+
+.box5{
+    width: 50px;
+    height: 50px;
+    background-color: #286;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    /* margin-left: -25px;
+    margin-top: -25px;
+    방법1번 
+    53,54,55,56 열
+    방법2번
+    53,54,62 열
+    */
+    transform: translate(-50%, -50%);
+}
+
+/* 가로세로의 절반크기 */
+/* 웹페이지의 기준은 왼쪽과 위다 
+그래서     /* margin-left: -25px;
+    margin-top: -25px;*/
+
+
+/* position   해당 태그 및 요소를 위치선정 할때 사용하는 속성이며, 방향을 지정할때 반드시 작성해야 동작
+static - 기본값 > 위치 설정이 불가능하며, 포지션 설정을 하지 않았을떄의 값
+relative 원래 있던 위치의 기준으로 좌표를 이동하며, 요소의 부모에 relative 작성시 해당 요소가 기준점이 되며 "상대좌표"로 이동
+absolute "절대좌표"로 기준으로 동작되나, 부모요소에 relative 속성이 있다면 해당 영역 기준으로 변경되며, 기준점이 없으면 바디영역 기준으로 이동
+
+
+
+right: 0; 오른쪽 끝
+top: 0; 상단 끝
+bottom: 0; 하단끝
+left: 0; 왼쪽끝
+fixed - 스크롤 여부와 관계없이 상간의 기준으로 적용,해당 영역은 고정
+fixed의 경우 부모요소의 relative와 무관하다
+
+abdolute / fixed 사용시 가로영역이 100%가 기본으로 설정되는 display:black 요소가 삭제가 되며, 단독 개체로 변경되며, 단독 개체로 변경시 해당영역은 상실된다.
+방향은 4가지 방향으로 사용할수있고, 탑 라이트 바톰 레프트로 사용가능
+
+우선순위 속성인 z-index를 사용하기 위해서는 반드시 position속성필요
+
+por + enter > position:relative;
+poa + enter > position:absolute;
+pof + enter > position:fixed;  */

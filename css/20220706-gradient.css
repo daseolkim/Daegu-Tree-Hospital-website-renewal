@@ -1,0 +1,65 @@
+@charset "utf-8";
+*{margin: 0; padding: 0;}
+
+.box{
+    width: 300px;
+    height: 300px;
+    border: 1px solid #000;
+    display: inline-block;
+    margin: 30px;
+
+}
+/* 선형 그라디언트 linearGradient  원형 그라디언트 radialGradient
+
+background 선형 그라디언트(진행방향, 색상1 색상2..)
+진행방향 > top-left /top-right to-bottom/ to top
+각도 deg, px, %등 단위도 사용가능
+
+background 원형 그라디언트(shape size at posision, color, color2...)
+shape 원모양 혹은 타원모양인지 설정 > 타원이 기본값
+circle 원 / ellipse 타원(기본값)
+size 크기지정
+position 중심의 위치
+color 색지정 */
+
+.gra1{
+    background: linear-gradient(to left, #dea 0%, #fff 100%);
+}
+.gra2{
+    background: linear-gradient(to bottom, #dae 50%, rgb(230, 62, 188) 75%, #fff 100%);
+}
+.gra3{
+    background: linear-gradient(to right top, rgb(42, 253, 154) 0%, #fff 100%);
+}
+.gra4{
+    background: linear-gradient(90deg, orange 0%, #fff 100%);
+}
+.gra5{
+    background: -webkit-radial-Gradient(left top, circle, blue 0%, #fff 100%);
+}
+.gra6{
+    background: -webkit-radial-Gradient(50% 50%, ellipse, pink 0%, rgb(235, 111, 111) 50%, coral 100%);
+}
+.gra7{
+    background: rgb(255,255,255);
+background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,180,215,0.9821826280623608) 16%, rgba(117,255,252,1) 31%, rgba(243,244,188,1) 48%, rgba(255,89,158,1) 66%, rgba(173,28,255,1) 83%, rgba(159,239,255,1) 100%);
+}
+
+/* 밴더 프리픽스 - 브라우저의 호환성을 위해 필요한 속성
+-webkit- (chrome, safari) 표준
+ms edge
+moz firefox
+o opera */
+
+
+p{
+    font-size: 70px;
+    font-weight: bold;
+    background: rgb(243,244,188);
+    background: linear-gradient(90deg, rgba(243,244,188,1) 21%, rgba(255,89,158,1) 66%, rgba(173,28,255,1) 84%, rgba(159,239,255,1) 100%);
+    color: transparent;
+    -webkit-background-clip: text;
+}
+    /* color: transparent;
+    -webkit-background-clip: text; 
+    배경은 투명하게 글씨는 그라디언트 설정한데로 하려면 */

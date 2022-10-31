@@ -1,0 +1,72 @@
+@charset "utf-8";
+*{margin: 0; padding: 0; font-family: 'Noto Sans KR', sans-serif;}
+ul{list-style: none;}
+a{text-decoration: none; color: #000;}
+
+body{height: 5000px;}
+
+.sns-nav{
+    position: fixed;
+    right: 85px;
+    top: 250px;
+    /* top: 50%;
+    transform: translateY(-50%); 중앙 */
+}
+
+.sns-nav ul li{
+    margin: 10px 0;
+    position: relative;
+    z-index: 9;
+}
+.sns-nav ul li a{position: relative;}
+.sns-nav ul li::before{
+    content: attr(data-text);
+    position: fixed;
+    font-weight: bold;
+    color: #fff;
+    right: 87px;
+    height: 49px;
+    font-size: 14px;
+    line-height: 270%;
+    letter-spacing: 0.5px;
+    z-index: 1;
+    opacity: 0;
+    transition: 0.7s;
+}
+.sns-nav ul li:hover::before{
+    opacity: 1;
+    right: 67px;
+    width: 125px;
+}
+
+
+.sns-nav ul li::after{
+    content: "";
+    background-color: #aaa;
+    position:fixed;
+    width: 39px;
+    height: 39px;
+    border-radius: 50px;
+    right: 86px;
+    transition: 0.7s;
+    opacity: 0;
+}
+.sns-nav ul li:hover::after{
+    width: 125px;
+    opacity: 1;
+}
+.sns-nav ul li:nth-child(1)::after{
+    background: url(http://daeguforest.com/images/common/q_ico_03_bg.png);
+}
+.sns-nav ul li:nth-child(2)::after{
+    background-color: #3b599a;
+}
+.sns-nav ul li:nth-child(3)::after{
+    background-color: #41b649;
+}
+.sns-nav ul li:nth-child(4)::after{
+    background-color: #d2242a;
+}
+.sns-nav ul li:nth-child(5)::after{
+    background-color: #f2e600;
+}

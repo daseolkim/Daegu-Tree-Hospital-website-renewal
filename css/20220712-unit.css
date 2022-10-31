@@ -1,0 +1,40 @@
+@charset "utf-8";
+*{margin: 0; padding: 0;}
+
+.box{font-size: 20px;}
+.f1{font-size: 1.5em;}
+/* 브라우저의 폰트사이즈 기준16으로 1.5곱한값이나옴 */
+/* em 부모 속성의 font-size 값을 상속받아 해당 값 만큼 배수 증가
+부모 속성의 폰트사이즈 * 해당배수의 값
+단. 부모요소에 폰트를 미설정시 기본값인 16px이동작
+.box > 20px
+20 * 1.5 = 30px이 적용
+px단위는 절대로 변하지 않는 절대값
+em단위는 가변형 단위이다. */
+body,html{font-size: 10px;}
+.f2{
+    font-size: 2rem;
+}
+/* rem 최상의 폰트사이즈 기준으로 배수증가
+최상위폰트사이지 * 배수
+16*2=32px이 적용
+만약 가로길이가 1200px > rem 으로 변경한다면 75rem
+16 * 75 = 1200 */
+
+.f3{
+    font-size: 5vw;
+}
+.f4{
+    font-size: 5vh;
+}
+/* vw - viewport width / viewport height
+가로길이가 1vw or 1vh 일때 실제 컨텐츠 크기의 1/100 이 적용된다
+만약 가로길이가 1200px 이라면 1vw > 12px적용된다 */
+.f5{
+    font-size: 80%;
+}
+/* 16 * 퍼센트값(0.8) */
+.f6{
+    font-size: 20pt;
+}
+/* pt 값 * (96 나누기 72)  */
