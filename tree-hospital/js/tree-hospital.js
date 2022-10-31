@@ -56,14 +56,14 @@ $("document").ready(function(){
         $(".swiper").hide().eq(i).show()
         swiperFunc(".swiper.pestinfo-swiper-"+(i+1))        
     })
-    $(".pestinfo-bottom  .pestinfo-bottom-wrap ul li a:nth-child(1) a::after").addClass("on")
 
-        $(".pestinfo-bottom  .pestinfo-bottom-wrap ul li").click(function(){
-            i = $(this).index();
-            $(".pestinfo-bottom-wrap ul li").removeClass("on").eq(i).addClass("on")
+    $(".pestinfo-bottom  .pestinfo-bottom-wrap ul li:nth-child(1) a::after").addClass("on")
+
+        $(".pestinfo-bottom .pestinfo-bottom-wrap ul li").click(function(){
+            let i = $(this).index();
+            $(".pestinfo-bottom .pestinfo-bottom-wrap ul li").removeClass("on").eq(i).addClass("on")
             $(".pestinfo-bottom").removeClass("on").eq(i).addClass("on")
-            $(".pestinfo-bottom-wrap").swiperFunc(".swiper.pestinfo-swiper-"+(i+1))
-
+            swiperFunc(".swiper.pestinfo-swiper-"+(i+1))
         })
 
 });

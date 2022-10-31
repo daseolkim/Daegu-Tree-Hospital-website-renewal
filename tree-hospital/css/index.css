@@ -432,6 +432,7 @@ ul{list-style:  none;}
     left: 0;
     transition: 1s;
     transform: scaleX(0);
+    width: 0;
 }
 .pestinfo-bottom  .pestinfo-bottom-wrap ul li.on a::after,
 .pestinfo-bottom  .pestinfo-bottom-wrap ul li a:hover::after{
@@ -442,10 +443,10 @@ ul{list-style:  none;}
 .pestinfo-bottom  .pestinfo-bottom-wrap ul li a{
     color: #333;
 }
-.pestinfo-bottom  .pestinfo-bottom-wrap ul li.on{font-weight: 100;}
+.pestinfo-bottom  .pestinfo-bottom-wrap ul li.on{font-weight: 900;}
 .pestinfo-bottom  .pestinfo-bottom-wrap ul li:hover.on{font-weight: 900;}
 .pestinfo-bottom  .pestinfo-bottom-wrap ul li.on a{color: #000;}
-.pestinfo-bottom  .pestinfo-bottom-wrap ul li.on::after,
+.pestinfo-bottom  .pestinfo-bottom-wrap ul li.on a::after,
 .pestinfo-bottom  .pestinfo-bottom-wrap ul li a:hover::after{transform: scaleX(1);}
 
 .swiper-wrapper .swiper-slide h4{position: relative; text-align: center;}
